@@ -33,7 +33,7 @@ def tel_send_message(chat_id,text):
 	return re
 	
 @app.route('/{}'.format(Token), methods=['GET','POST'])
-def index():
+def respond():
 	if request.method == 'POST':
 		msg = request.get_json()
 		try:
