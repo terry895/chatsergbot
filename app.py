@@ -52,7 +52,9 @@ def index():
 	else:
 		return "<h1>Welcome!</h1>"
 
-
+@app.route('/', methods=['GET','POST'])
+def index():
+	return "<h1>Welcome!</h1>"
 
 @app.route('/setwebhook', methods=['GET', 'POST'])
 def set_webhook():
