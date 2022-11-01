@@ -13,7 +13,7 @@ bot = telegram.Bot(token=Token)
 
 app = Flask(__name__)
 
-def parse_message(msg):
+def tel_parse_message(msg):
 	print("msg:",msg)
 	chat_id = msg['message']['chat']['id']
 	text = msg['message']['text']
@@ -32,20 +32,25 @@ def tel_send_message(chat_id,text):
 	print(re)
 	return re
 	
-@app.route('/', methods=['GET','POST'])
+@app.route('/{}'.format(Token), methods=['GET','POST'])
 def index():
 	if request.method == 'POST':
 		msg = request.get_json()
-		chatid,txt = parse_message(msg)
-		if txt in ('HI','Hi','hi','Hello','HELLO'):
-			tel_send_message(chatid,'Hello!!')
-		elif txt in ('hola','Hola','HOLA','HolA'):
-			tel_send_message(chatid,"Hola!!")
-		else:
-			tel_send_message(chatid,'from webhook')
+		try:
+		    chat_id, txt = tel_parse_message(msg)
+		    if txt == "hi":
+		        tel_send_message(chat_id,"Hello, world!")
+		    elif txt == "image":
+		        tel_send_image(chat_id)
+	 
+		    else:
+		        tel_send_message(chat_id, 'from webhook')
+		except:
+		    print("from index-->")
+	 
 		return Response('ok', status=200)
 	else:
-		return "<h1>Bienvenido</h1>"
+		return "<h1>Welcome!</h1>"
 
 
 
