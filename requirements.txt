@@ -1,0 +1,13 @@
+flask
+requests
+simplejson==3.16.0
+gunicorn
+python-telegram-bot
+python-telegram-bot[passport]
+python-telegram-bot[socks]
+python-telegram-bot[rate-limiter]
+python-telegram-bot[webhooks]
+python-telegram-bot[callback-data]
+python-telegram-bot[job-queue]
+python-telegram-bot[all]
+python-telegram-bot[ext]
