@@ -21,7 +21,7 @@ def parse_message(msg):
 	return chat_id,text
 
 def tel_send_message(chat_id,text):
-	url = f'%s%s/senMessage'%(URL,Token)
+	url = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
 	pl = {
 		"chat_id" : chat_id,
 		"text" : text
