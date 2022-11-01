@@ -3,6 +3,7 @@ from flask import request
 from flask import Response
 import requests
 import telegram
+import re
 
 global bot
 
@@ -21,7 +22,7 @@ def parse_message(msg):
 	return chat_id,text
 
 def tel_send_message(chat_id,text):
-	url = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
+	url = bot.sendMessage()
 	print(url)
 	pl = {
 		"chat_id" : chat_id,
@@ -48,14 +49,13 @@ def index():
 
 
 
-@app.route('/set_WebHook', methods=['GET','POST'])
-def setwebhook():
-	s = bot.setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=Token))
-	print(s)
-	if s:
-		return "webhook setup ok"
-	else:
-		return "webhook setup failed"	
+@app.route('/setwebhook', methods=['GET', 'POST'])
+def set_webhook():
+   s = bot.setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
+   if s:
+       return "webhook setup ok"
+   else:
+       return "webhook setup failed"	
 		
 if __name__ =='__main__':
 	app.run(debug=True)
