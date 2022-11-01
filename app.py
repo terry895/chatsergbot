@@ -22,7 +22,7 @@ def tel_parse_message(msg):
 	return chat_id,text
 
 def tel_send_message(chat_id,text):
-	url = bot.sendMessage()
+	url = f'https://api.telegram.org/bot{Token}/sendMessage'
 	print(url)
 	pl = {
 		"chat_id" : chat_id,
