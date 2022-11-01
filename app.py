@@ -52,11 +52,12 @@ def index():
 @app.route('/setwebhook', methods=['GET', 'POST'])
 def set_webhook():
    s = bot.setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=Token))
+   print(s)
    if s:
        return "webhook setup ok"
    else:
        return "webhook setup failed"	
 		
-if __name__ =='__main__':
-	app.run(debug=True)
+if __name__ == '__main__':
+   app.run(threaded=True)
 
