@@ -42,6 +42,8 @@ def respond():
 		        tel_send_message(chat_id,"Hello, world!")
 		    elif txt in ("hola","holis","Hola","HOLA"):
 		        tel_send_message(chat_id,"Hola Mundo!")
+		    elif txt in ("Sergio","sergio","serch","serchw"):
+		        tel_send_message(chat_id,"Hola perrin!")
 		    elif txt == "image":
 		        tel_send_image(chat_id)
 	 
