@@ -22,12 +22,15 @@ def parse_message(msg):
 
 def tel_send_message(chat_id,text):
 	url = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
+	print(url)
 	pl = {
 		"chat_id" : chat_id,
 		"text" : text
 		}
 	re = requests.post(url,json=pl)
-
+	print(re)
+	return re
+	
 @app.route('/', methods=['GET','POST'])
 def index():
 	if request.method == 'POST':
