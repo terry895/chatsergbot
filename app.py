@@ -64,8 +64,8 @@ def index():
 def enviarMsg():
 	url = f'https://api.telegram.org/bot{Token}/sendMessage'
 	msg = {
-		'chat_id' : '@Luis_Bernardo_Ramos_Terry',
-		'text' : 'Prueba',	
+		"chat_id" : "@Luis_Bernardo_Ramos_Terry",
+		"text" : "Prueba",	
 		}
 	re = requests.post(url,json=msg)
 	return re
