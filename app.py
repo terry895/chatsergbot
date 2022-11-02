@@ -71,7 +71,7 @@ def enviarMsg():
 	print(msg)
 	re = requests.post(url,json=msg)
 	print(re)
-	
+	return {'val':'ok','status':200}
 	
 
 @app.route('/setwebhook', methods=['GET', 'POST'])
