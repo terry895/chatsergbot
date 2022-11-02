@@ -63,12 +63,15 @@ def index():
 @app.route('/enviarmsg'.format(Token),methods=['GET','POST'])
 def enviarMsg():
 	url = f'https://api.telegram.org/bot{Token}/sendMessage'
+	print(url)
 	msg = {
 		"chat_id" : "@Luis_Bernardo_Ramos_Terry",
-		"text" : "Prueba",	
+		"text" : "Prueba"	
 		}
+	print(msg)
 	re = requests.post(url,json=msg)
-	return re
+	print(re)
+	
 	
 
 @app.route('/setwebhook', methods=['GET', 'POST'])
