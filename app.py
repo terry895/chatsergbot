@@ -65,7 +65,7 @@ def enviarMsg():
 	url = f'https://api.telegram.org/bot{Token}/sendMessage'
 	print(url)
 	msg = {
-		"chat_id" : "@Luis_Bernardo_Ramos_Terry",
+		"chat_id" : "@Luis_B_Ramos_Terry",
 		"text" : "Prueba"	
 		}
 	print(msg)
