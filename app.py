@@ -67,7 +67,7 @@ def enviarMsg():
 		'chat_id' : '@Luis_Bernardo_Ramos_Terry',
 		'text' : 'Prueba',	
 		}
-	re = requests.post(url,json=pl)
+	re = requests.post(url,json=msg)
 	return re
 	
 
