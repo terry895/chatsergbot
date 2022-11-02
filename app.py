@@ -60,7 +60,7 @@ def respond():
 def index():
 	return "<h1>Welcome!</h1>"
 	
-@app.route('/enviarmsg',methods=['GET','POST'])
+@app.route('/enviarmsg'.format(Token),methods=['GET','POST'])
 def enviarMsg():
 	url = f'https://api.telegram.org/bot{Token}/sendMessage'
 	msg = {
