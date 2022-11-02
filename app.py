@@ -71,6 +71,17 @@ def enviarMsg():
 	print(msg)
 	re = requests.post(url,json=msg)
 	print(re)
+	
+	url2 = f'https://api.telegram.org/bot{Token}/Message'
+	print(url2)
+	msg2 = {
+		"from" : "@channelSergW_bot",
+		"sender_chat" : "@channelSergW_bot",
+		"text" : "Prueba"	
+		}
+	print(msg2)
+	re2 = requests.post(url2,json=msg2)
+	print(re2)
 	return {'val':'ok','status':200}
 	
 
