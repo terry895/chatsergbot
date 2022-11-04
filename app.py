@@ -66,7 +66,7 @@ def enviarMsg():
 	print(url)
 	msg = {
 		"chat_id" : "5113504540",
-		"text" : "Prueba 2 terry"	
+		"text" : "Evio de Mensaje de Prueba de bot a terry"	
 		}
 	print(msg)
 	re = requests.post(url,json=msg)
